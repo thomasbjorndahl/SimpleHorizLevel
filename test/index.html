@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Horiz Level Tester</title>
+    </head>
+    <body>
+        <h1>Simple horiz level tester</h1>
+
+        <h3>Example 1</h3>
+        Default, with two values: 22 and 332<br/>
+        <canvas id="shl1" style="height: 100px; width: 100%"></canvas>
+
+        <h3>Example 2</h3>
+        Showing one with 100%<br/>
+        <canvas id="shl2" style="height: 100px"></canvas>
+
+        <h3>Example 3</h3>
+        <div>Showing data with popover</div>
+        <canvas id="shl3" style="height: 100px"></canvas>
+
+        <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+        <script src="../src/simple-horiz-level.js"></script>
+
+        <script>
+        $(function(){
+            console.log('Creating objects');
+
+            $('#shl1').simpleHorizLevel({ data: [{ name: 'first', value: 22, color: '#fc4c2d' },{ name: 'second', value: 332, color: '#118f14'}],options: {lineColor: 'black'}});
+            $('#shl2').simpleHorizLevel({ data: [{ name: 'All', value: 100, color: '#118f14'}], options: {lineColor: 'green'}});
+            $('#shl3').simpleHorizLevel({ data: [
+                { name: 'One third', value: 32, color: '#118f14'},
+                { name: 'The second', value: 30, color: 'red'},
+                { name: 'The last', value: 31, color: 'orange'}
+            ], options: {showBorder: false, lineColor: 'red', showPopover: true}});
+        })
+        </script>
+
+    </body>
+</html>
